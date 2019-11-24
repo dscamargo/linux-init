@@ -5,13 +5,12 @@ URL_GOOGLE_CHROME="https://dl.google.com/linux/direct/google-chrome-stable_curre
 DIRETORIO_DOWNLOADS="$HOME/Downloads/Programas"
 
 PROGRAMAS_PARA_INSTALAR=(
+  git
   mint-meta-codecs
   virtualbox
   flameshot
   nemo-dropbox
   ratbagd
-  piper
-  lutris
   libvulkan1
   libvulkan1:i386
   libgnutls30:i386
@@ -51,6 +50,7 @@ sudo snap install slack --classic
 sudo snap install code --classic
 sudo snap install postman
 sudo snap install opera
+sudo snap install gitkraken
 
 # ----------------------------- PÓS-INSTALAÇÃO ----------------------------- #
 ## Finalização, atualização e limpeza##
