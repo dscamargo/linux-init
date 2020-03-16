@@ -14,8 +14,8 @@ sudo apt install git
 #SNAPD
 sudo apt install snapd
 #CHROME
-# wget -c "$URL_GOOGLE_CHROME" -P "$DIRETORIO_DOWNLOADS"
-# sudo dpkg -i $DIRETORIO_DOWNLOADS/*.deb
+wget -c "$URL_GOOGLE_CHROME" -P "$DIRETORIO_DOWNLOADS"
+sudo dpkg -i $DIRETORIO_DOWNLOADS/*.deb
 #VSCODE
 sudo snap install code --classic
 #SPOTIFY
