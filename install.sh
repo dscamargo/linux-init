@@ -2,6 +2,8 @@
 
 URL_GOOGLE_CHROME="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
 DIRETORIO_DOWNLOADS="$HOME/Downloads/Programas"
+URL_GIT_KRAKEN="https://release.gitkraken.com/linux/gitkraken-amd64.deb"
+URL_DROPBOX="https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2020.03.04_amd64.deb"
 
 ## Removendo travas eventuais do apt ##
 sudo rm /var/lib/dpkg/lock-frontend
@@ -10,18 +12,20 @@ sudo rm /var/cache/apt/archives/loc
 sudo apt update
 sudo apt upgrade -y
 #GIT
-sudo apt install git
+sudo apt install git -y
 #SNAPD
 sudo apt install snapd
 #CHROME
 wget -c "$URL_GOOGLE_CHROME" -P "$DIRETORIO_DOWNLOADS"
+#GIT KRAKEN
+wget -c "$URL_GIT_KRAKEN" -P "$DIRETORIO_DOWNLOADS"
+#DROPBOX
+wget -c "$URL_DROPBOX" -P "$DIRETORIO_DOWNLOADS"
 sudo dpkg -i $DIRETORIO_DOWNLOADS/*.deb
 #VSCODE
 sudo snap install code --classic
 #SPOTIFY
 sudo snap install spotify
-#POSTBIRD - SQL
-sudo snap install postbird
 #ROBO3T - MONGODB
 sudo snap install robo3t-snap
 #POSTMAN
@@ -29,17 +33,10 @@ sudo snap install postman
 #SLACK
 sudo snap install slack --classic
 #DOCKER INSTALLATION
-sudo apt install docker.io -y
+curl -fsSL https://get.docker.com | sh
 sudo usermod -aG docker $USER
 #DOCKER-COMPOSE
 sudo curl -L https://github.com/docker/compose/releases/download/1.15.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 #PLANK DOCK
-sudo add-apt-repository -y ppa:ricotz/docky
-sudo apt-get update
-sudo apt-get install plank
-#FINALIZANDO
-sudo apt update && sudo apt dist-upgrade -y
-flatpak update
-sudo apt autoclean
-sudo apt autoremove -y
+sudo apt-get install plank -y 
