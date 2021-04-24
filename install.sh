@@ -11,6 +11,7 @@ sudo rm /var/cache/apt/archives/loc
 # ATUALIZANDO SISTEMA
 sudo apt update
 sudo apt upgrade -y
+sudo apt install curl
 #GIT
 sudo apt install git -y
 #SNAPD
