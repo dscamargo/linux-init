@@ -4,6 +4,7 @@ URL_GOOGLE_CHROME="https://dl.google.com/linux/direct/google-chrome-stable_curre
 DIRETORIO_DOWNLOADS="$HOME/Downloads/Programas"
 URL_GIT_KRAKEN="https://release.gitkraken.com/linux/gitkraken-amd64.deb"
 URL_DROPBOX="https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2020.03.04_amd64.deb"
+MONGO_COMPASS="https://downloads.mongodb.com/compass/mongodb-compass_1.26.1_amd64.deb"
 
 ## Removendo travas eventuais do apt ##
 sudo rm /var/lib/dpkg/lock-frontend
@@ -22,6 +23,8 @@ wget -c "$URL_GOOGLE_CHROME" -P "$DIRETORIO_DOWNLOADS"
 wget -c "$URL_GIT_KRAKEN" -P "$DIRETORIO_DOWNLOADS"
 #DROPBOX
 wget -c "$URL_DROPBOX" -P "$DIRETORIO_DOWNLOADS"
+# MONGO COMPASS
+wget -c "$MONGO_COMPASS" -P "$DIRETORIO_DOWNLOADS"
 sudo dpkg -i $DIRETORIO_DOWNLOADS/*.deb
 #VSCODE
 sudo snap install code --classic
